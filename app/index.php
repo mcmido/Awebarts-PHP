@@ -1,3 +1,13 @@
+<?php
+
+if(!isset($_SESSION['username']))
+{
+	include 'Login.php';
+	die();
+}
+
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +31,7 @@
 	<!-- /header -->
 	<div class="clear"></div>
 	<!-- Clear fix -->
-	<div id="contents">
+	<div class="contents">
 		<aside>
 			<nav>
 				<a class="btn btn-danger active" href="index.php">Home Pages</a></li>
