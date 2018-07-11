@@ -19,21 +19,23 @@
 			<div class="register">
 				<form action="LoginController.php" method="post">
 					<h1>Register new user :</h1>
-					<input class="input-lg" type="text" placeholder="Please write your name">
-					<input class="input-lg" type="text" placeholder="Please write your a username">
-					<input class="input-lg" type="password" name="">
-					<input class="input-lg" type="email" placeholder="please write your Email" name="">
+					<input required="required" class="input-lg" name="name" type="text" placeholder="Please write your name">
+					<input required="required" class="input-lg" name="username" type="text" placeholder="Please write your a username">
+					<input required="required" class="input-lg" name="password" type="password" >
+					<input required="required" class="input-lg" name="email" type="email" placeholder="please write your Email" name="">
 					<input class="btn btn-primary btn-lg button" type="submit" name="submit" value="Register">
 				</form>
 			</div>
+
 			<div class="login">
-				<h1>Login :</h1>
-				<form action="LoginController.php" method="post">
-				<input class="input-lg" type="text" placeholder="Please write your a username">
-				<input class="input-lg" type="password" name="">
-				<input class="btn btn-primary btn-lg button" type="submit" value="Login" name="">
-				</form>
+                <form action="LoginController.php" method="post">
+                    <h1>Login :</h1>
+                    <input required="required" class="input-lg" name="username" type="text" placeholder="Please write your a username">
+                    <input required="required" class="input-lg" name="password" type="password" name="">
+                    <input class="btn btn-primary btn-lg button" type="submit"  name="submit" value="Login">
+                </form>
 			</div>
+
 		</div>
 	</div>
 </body>

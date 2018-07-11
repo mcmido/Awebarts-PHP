@@ -1,11 +1,12 @@
 <?php
-
-if(!isset($_SESSION['username']))
+//$username = 'mohamed';
+//$_SESSION['username'] = $username;
+session_start();
+if (!isset($_SESSION['username']))
 {
-	include 'Login.php';
-	die();
+    include 'LoginController.php';
+    die();
 }
-
 
 ?>
 <!DOCTYPE html>
@@ -26,7 +27,14 @@ if(!isset($_SESSION['username']))
 	<!-- Header -->
 	<header>
 		<img src="resources/images/logo.png" alt="logo">
-		<h2>Welcome Admin</h2>
+		<h2>Welcome
+            <?php
+            if (isset($_SESSION['username']))
+            {
+                echo $_SESSION['username']." <a href='?page=logout'>Logout</a>";
+            }
+            ?>
+        </h2>
 	</header>
 	<!-- /header -->
 	<div class="clear"></div>

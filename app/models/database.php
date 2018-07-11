@@ -18,6 +18,7 @@ class database
     private $user;
     private $password;
     private $database;
+    public  $connection;
 
     function __construct($filename)
     {
@@ -29,15 +30,18 @@ class database
         $this->password = $password;
         $this->database = $database;
         $this->connect();
+
     }
 
     private function connect()
     {
         // connect to the server.
-       if(!mysqli_connect($this->host,$this->user,$this->password,$this->database))
+        $con = mysqli_connect($this->host,$this->user,$this->password,$this->database);
+        $this->connection = $con;
+
+        if (mysqli_connect_error())
         {
-            throw new Exception("ERROR: Not connected to the database nor server");
-            die("connection failed." . mysqli_connect_error());
+            echo 'couldnt connect to the server/db';
         }
     }
 
@@ -45,6 +49,24 @@ class database
     {
         mysqli_close();
     }
+    // old CONNECT function..
+
+    /*
+     *
+    private function connect()
+    {
+        // connect to the server.
+
+       if(!mysqli_connect($this->host,$this->user,$this->password,$this->database))
+        {
+            throw new Exception("ERROR: Not connected to the database nor server");
+            die("connection failed." . mysqli_connect_error());
+        }
+    }
+     */
+
+
+
     /*
     private function cnt()
     {
