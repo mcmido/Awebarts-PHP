@@ -54,7 +54,7 @@ if (!isset($_SESSION['username']))
 			<?php
 				if(@$_GET['page'])
 				{
-					$url = $_GET['page'].".php";
+					$url = "controllers/c_". $_GET['page'].".php";
 					if(is_file($url))
 					{
 						include $url;

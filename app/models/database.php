@@ -47,7 +47,7 @@ class database
 
     function close()
     {
-        mysqli_close();
+        mysqli_close($this->connection);
     }
     // old CONNECT function..
 
@@ -75,7 +75,7 @@ class database
         {
             die("connection closed." . mysqli_connect_error());
         }
-        else echo "ok ok:D";
+        else echo "ok ok";
     }
     */
 }

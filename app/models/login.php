@@ -9,7 +9,7 @@ class login
     private $username;
     private $password;
     private $sconn;
-    private $cxm; // database object
+    private $cxn; // database object
 
     function __construct($username,$password)
     {
@@ -31,8 +31,8 @@ class login
     {
         include "database.php";
         $vars = "include/vars.php";
-        $this->cxm = new database($vars);
-        $this->sconn =$this->cxm->connection;
+        $this->cxn = new database($vars);
+        $this->sconn = $this->cxn->connection;
 
 
     }
@@ -73,7 +73,7 @@ class login
     }
     function close()
     {
-        $this->cxm->close();
+        $this->cxn->close();
     }
 
 
@@ -84,4 +84,3 @@ class login
 
 
 
-?>

@@ -3,7 +3,7 @@ header{padding:20px;min-height: 130px;}
 header img{width:20%;float: left;}
 header h2{float: right;font-family: cursive;font-size: 18px;margin-top:50px;}
 
-.contents{border-radius: 10px; border:1px solid #ddd;min-height: 350px;}
+.contents{overflow:hidden;border-radius: 10px; border:1px solid #ddd;min-height: 350px;}
 .logincont{width:800px;margin: 50px auto;}
 
 aside{width: 20%;float: left;min-height: 350px;margin-right: 20px;}
@@ -37,6 +37,30 @@ footer p{font-family: verdana;font-size: 16px;}
 }
 
 .register .button,.login .button{margin-left:10px;}
+
+.mainSettingsForm
+{
+	width:400px;float: left;
+}
+.mainSettingsForm label
+{
+	float: left;
+	width: 150px;
+}
+.mainSettingsForm input
+{
+	width: 250px; height: 30px; padding: 3px 5px;border: 1px solid #999  ;  border-radius: 5px;
+	margin: 10px;display: block;
+}
+.mainSettingsForm textarea
+{
+	width: 250px; border-radius: 5px; border: 1px solid #999;margin-bottom: 10px;height: 90px;
+}
+.mainSettingsForm input[type="submit"]
+{
+	height: 40px;
+	margin: 50px 150px;
+}
 
 
 
