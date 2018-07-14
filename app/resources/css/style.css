@@ -4,6 +4,7 @@ header img{width:20%;float: left;}
 header h2{float: right;font-family: cursive;font-size: 18px;margin-top:50px;}
 
 .contents{overflow:hidden;border-radius: 10px; border:1px solid #ddd;min-height: 350px;}
+.contents h2{float:right;font-family: Verdana;font-size: 16px;color: blue;}
 .logincont{width:800px;margin: 50px auto;}
 
 aside{width: 20%;float: left;min-height: 350px;margin-right: 20px;}
@@ -62,5 +63,28 @@ footer p{font-family: verdana;font-size: 16px;}
 	margin: 50px 150px;
 }
 
+.add{}
+.add h1
+{
+    font-family: cursive;
+    font-size: 16px;
+    border-bottom: 1px dashed #ddd;
+    margin-bottom: 15px;
+}
 
+.add input[type='submit']
+{
+    margin: 15px 150px;
+}
+
+.sectionTable
+{
+    width: 78%;
+}
+.sectionTable th
+{
+    color: #900;
+    background: #ff9 !important;
+}
+.sectionTable td img{max-width:24px;margin:3px;}
 

@@ -20,7 +20,7 @@ class Display extends Awebarts
 
         $this->connectToDb();
 
-        $this->getData();
+
 
 
 
@@ -28,7 +28,30 @@ class Display extends Awebarts
 
     }
 
-    function getData()
+    function getAllData()
+    {
+        $query = "SELECT * FROM $this->tablename ORDER BY `id` DESC";
+
+        if (!$sql = mysqli_query($this->sconn,$query))
+        {
+            throw new Exception("Error: canno't excute query!");
+        }
+        else
+        {
+            $num = mysqli_num_rows($sql);
+            if($num>0)
+            {
+                for($i=0; $i<$num; $i++)
+                {
+                    $data[$i] = mysqli_fetch_array($sql);
+                }
+            }
+        }
+        return $data;
+    }
+
+
+    function getLastRecordDESC()
     {
         $query = "SELECT * FROM $this->tablename ORDER BY `id` DESC LIMIT 1";
 //        $con = mysqli_connect('localhost','root','','awebarts');
@@ -53,6 +76,30 @@ class Display extends Awebarts
 
         return $data;
     }
+
+    function getRecordById($id)
+    {
+        $id = intval($id);
+
+        $query = "SELECT * FROM $this->tablename WHERE `id` = $id ";
+        if (!$sql = mysqli_query($this->sconn,$query))
+        {
+            throw new Exception("Error: canno't excute query!");
+        }
+        else
+            {
+                $num = mysqli_num_rows($sql);
+                while ($num > 0)
+                {
+                    $data = mysqli_fetch_array($sql);
+                    $num--;
+                }
+            }
+
+        return $data;
+
+    }
+
 
 
 }

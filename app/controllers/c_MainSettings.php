@@ -45,7 +45,7 @@ else
         include 'models/Awebarts.php';
         include 'models/Display.php';
         $data =  new Display('main_settings');
-        $displayData = $data->getData();
+        $displayData = $data->getLastRecordDESC();
 
     }
     catch (Exception $exception)
